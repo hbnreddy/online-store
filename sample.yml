@@ -16,8 +16,8 @@
        var: res
     - name: deploying artifact
       copy:
-        src: /var/lib/jenkins/workspace/sample/target/simpleapp-0.0.1-SNAPSHOT.war
-        dest: /var/lib/tomcat9/webapps
+        src: /var/lib/jenkins/workspace/sample/target/onlinebookstore-0.0.1-SNAPSHOT.war
+        dest: /var/lib/tomcat9/webapps/store.war
       when:
         res.stat.exists==true
 ...
