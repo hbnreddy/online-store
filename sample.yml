@@ -1,0 +1,23 @@
+---
+- name: playbook for deployment
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: installing tomcat
+      package:
+        name: tomcat9
+        state: present
+    - name: checking deployment exist or not
+      stat:
+        path: /var/lib/tomcat9/webapps
+      register: res
+    - name: cap op
+      debug:
+       var: res
+    - name: deploying artifact
+      copy:
+        src: /var/lib/jenkins/workspace/sample/target/simpleapp-0.0.1-SNAPSHOT.war
+        dest: /var/lib/tomcat9/webapps
+      when:
+        res.stat.exists==true
+...
