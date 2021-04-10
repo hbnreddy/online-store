@@ -5,4 +5,4 @@
 #apt install nginx -y &> output.txt
 #echo "start nginx"
 #service nginx start
-apt install tree 
+apt remove tree -y > output.txt
