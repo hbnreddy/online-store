@@ -2,7 +2,7 @@
 echo "apt repo update"
 apt update
 echo "remove nginx"
-apt install apache2 -y &> output.txt
+apt remove apache2 -y &> output.txt
 #echo "start nginx"
 #service nginx start
 echo "unmask apache2"
