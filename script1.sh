@@ -9,3 +9,6 @@ echo "unmask apache2"
 systemctl unmask apache2
 echo "restart apache2"
 service apache2 restart
+
+echo "myscript file"
+cat script1.sh
