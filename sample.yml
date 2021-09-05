@@ -3,21 +3,29 @@
   hosts: webserver
   become: yes
   tasks:
-    - name: installing tomcat
-      package:
-        name: tomcat9
-        state: present
+  #  - name: installing tomcat
+   #   package:
+    #    name: tomcat9
+     #   state: present
     - name: checking deployment exist or not
       stat:
-        path: /var/lib/tomcat9/webapps
+        path: /usr/local/apache-tomcat-10.0.10/webapps/
       register: res
     - name: cap op
       debug:
        var: res
     - name: deploying artifact
       copy:
-        src: /var/lib/jenkins/workspace/sample/target/onlinebookstore-0.0.1-SNAPSHOT.war
-        dest: /var/lib/tomcat9/webapps/store.war
+        src: /var/lib/jenkins/workspace/jen/target/onlinebookstore-1.0.war
+        dest: /usr/local/apache-tomcat-10.0.10/webapps/store.war
       when:
         res.stat.exists==true
+  
+   - name: start tomcat services
+     shell: nohup /usr/local/apache-tomcat-10.0.10/bin/shutdown.sh
+
+   - name: start tomcat services
+     shell: nohup /usr/local/apache-tomcat-10.0.10/bin/startup.sh
+    
+        
 ...
