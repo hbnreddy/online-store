@@ -21,11 +21,11 @@
       when:
         res.stat.exists==true
   
-   - name: start tomcat services
-     shell: nohup /usr/local/apache-tomcat-10.0.10/bin/shutdown.sh
+    - name: start tomcat services
+      shell: nohup /usr/local/apache-tomcat-10.0.10/bin/shutdown.sh
 
-   - name: start tomcat services
-     shell: nohup /usr/local/apache-tomcat-10.0.10/bin/startup.sh
+    - name: start tomcat services
+      shell: nohup /usr/local/apache-tomcat-10.0.10/bin/startup.sh
     
         
 ...
