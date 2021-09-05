@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    triggers{
+     poll scm '* * * * *'
+    }
     stages{
         stage("checkout_scm"){
             steps{
