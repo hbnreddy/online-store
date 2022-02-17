@@ -1,0 +1,13 @@
+---
+- name: playbook for deployment
+  hosts: deployserver
+  become: yes
+  tasks:
+    - name: deploying artifact
+      copy:
+        src: /var/lib/jenkins/workspace/deployment/sample.txt
+        dest: /home/ubuntu1
+      
+    
+        
+...
