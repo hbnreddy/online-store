@@ -5,7 +5,7 @@
   tasks:
     - name: deploying artifact
       copy:
-        src: /var/lib/jenkins/workspace/deployment/sample.txt
+        src: /var/lib/jenkins/workspace/deployment/mental.sh
         dest: /home/ubuntu1
       
     
