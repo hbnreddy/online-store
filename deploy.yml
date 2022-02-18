@@ -9,7 +9,7 @@
         dest: /home/ubuntu1
         
      - name: deploying artifact1
-      copy:
+  n    copy:
         src: /var/lib/jenkins/workspace/deployment/mental.sh
         dest: /home/client2   
       
